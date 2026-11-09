@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ho Ching Wong Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <nav aria-label="Main">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
+    </nav>
+    <button id="theme" type="button" aria-label="Switch to dark mode"></button>
+  </header>
 
+  <main>
+    <div class="hero">
+      <h1>Ho Ching Wong</h1>
+      <p class="role">Full-Stack Developer – CS Specialist @ UofT</p>
+    </div>
+
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about">
+        <p>Hi, I’m James, a second year Computer Science Specialist with a Focus in Artificial Intelligence at the University of Toronto.</p>
+        <p>I’m passionate about AI/ML, software development, and using code to solve complex problems!</p>
+        <p>I love playing video games and pickleball!</p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="cols">
+        <div><h3>Languages</h3><ul><li>Java</li><li>Python</li><li>R</li></ul></div>
+        <div><h3>Tools</h3><ul><li>Git</li><li>GitHub</li><li>IntelliJ IDEA and PyCharm</li></ul></div>
+        <div><h3>Programming</h3><ul><li>Object-oriented programming</li><li>Object-oriented design</li><li>Data structures and algorithms</li></ul></div>
+        <div><h3>Additional</h3><ul><li>Calculus</li><li>Linear algebra</li><li>Probability and statistics</li><li>Data analysis</li></ul></div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="edu">
+        <div>
+          <h3>Bachelor of Computer Science</h3>
+          <p class="school">University of Toronto</p>
+        </div>
+        <div>
+          <h3>Relevant coursework</h3>
+          <ul><li>Foundations of Computer Science I &amp; II</li><li>Data Structures &amp; Analysis</li><li>Software Design</li><li>Theory of Computing</li><li>Computer Organization</li><li>Calculus with Proofs</li><li>Linear Algebra</li><li>Probability, Statistics &amp; Data Analysis</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><button class="open" type="button" data-open="d-planner">UofT CS Course Planner</button></h3>
+          <p>A web application that maps course prerequisite relationships from a UofT courses database and recommends courses based on RateMyProf ratings collected with a web scraper. Created as part of UofT CSC111 Team Project.</p>
+        </article>
+        <article class="card">
+          <h3><button class="open" type="button" data-open="d-catan">Settlers Of Catan Remix <span class="wip">(Work in Progress)</span></button></h3>
+          <p>Settlers Of Catan implemented in Java with Swing, created as part of UofT CSC207 Team Project.</p>
+        </article>
+      </div>
+    </section>
+    <dialog id="d-planner" aria-labelledby="t-planner">
+      <div class="dlg">
+        <button class="close" type="button" data-close>Close</button>
+        <h3 id="t-planner">UofT CS Course Planner</h3>
+        <div class="shot"><span>Screenshot coming soon</span><img src="images/course-planner.png" alt="Screenshot of the UofT CS Course Planner"></div>
+        <p>A web application that maps course prerequisite relationships from a UofT courses database and recommends courses based on RateMyProf ratings collected with a web scraper. Created as part of UofT CSC111 Team Project.</p>
+        <a class="more" href="https://github.com/at-least-try/CSC111-Major-Project">View on GitHub</a>
+      </div>
+    </dialog>
+    <dialog id="d-catan" aria-labelledby="t-catan">
+      <div class="dlg">
+        <button class="close" type="button" data-close>Close</button>
+        <h3 id="t-catan">Settlers Of Catan Remix <span class="wip">(Work in Progress)</span></h3>
+        <div class="shot"><span>Screenshot coming soon</span><img src="images/catan.png" alt="Screenshot of Settlers Of Catan Remix"></div>
+        <p>Settlers Of Catan implemented in Java with Swing, created as part of UofT CSC207 Team Project.</p>
+        <a class="more" href="https://github.com/hoching-wong/Settlers-Of-Catan-Remix">View on GitHub</a>
+      </div>
+    </dialog>
+    <dialog id="d-email" aria-labelledby="t-email">
+      <div class="dlg">
+        <button class="close" type="button" data-close>Close</button>
+        <h3 id="t-email">Email:</h3>
+        <p class="addr">hoching.wong07@gmail.com</p>
+      </div>
+    </dialog>
+  </main>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <div class="links">
+      <a class="more" href="https://github.com/hoching-wong">GitHub</a>
+      <a class="more" href="https://www.linkedin.com/in/ho-ching-wong-463082383/">LinkedIn</a>
+      <a class="more" href="https://devpost.com/hoching-wong">Devpost</a>
+      <button class="more" type="button" data-open="d-email">Email</button>
+    </div>
+  </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+:root{
+  --bg:#f2f4f8; --surface:#ffffff; --ink:#14213d; --muted:#51607a; --line:#d5dbe6;
+  --accent:#1e3765; --pop:#e8a317; --pop-ink:#14213d;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0f1626;--surface:#17203a;--ink:#eef1f7;--muted:#a3afc6;--line:#2b3757;--accent:#9db8f0;--pop:#f2b73a;--pop-ink:#14213d}
+}
+:root[data-theme="dark"]{--bg:#0f1626;--surface:#17203a;--ink:#eef1f7;--muted:#a3afc6;--line:#2b3757;--accent:#9db8f0;--pop:#f2b73a;--pop-ink:#14213d}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--pop);outline-offset:3px;border-radius:4px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+header.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.5rem 0}
+header.top nav{display:flex;gap:1.25rem;flex-wrap:wrap}
+header.top a{color:var(--muted);text-decoration:none;font-weight:500}
+header.top a:hover{color:var(--ink)}
+#theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:50%;width:2.5rem;height:2.5rem;padding:0;display:grid;place-items:center;cursor:pointer}
+
+/* hero: the one loud thing */
+.hero{padding:4rem 0 5rem}
+.hero h1{font:800 clamp(3.2rem,11vw,8rem)/.92 var(--display);letter-spacing:-.035em;margin:0 0 1rem;font-variation-settings:"opsz" 96}
+.hero .role{font:500 clamp(1.15rem,2.6vw,1.7rem)/1.3 var(--display);color:var(--accent);margin:0}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 1.5rem}
+h3{font:500 1.35rem/1.25 var(--display);margin:0 0 .4rem}
+.about{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:42rem}
+.muted{color:var(--muted)}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.25rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.more{margin-top:auto;align-self:flex-start;display:inline-block;padding:.6rem 1.2rem;border-radius:.5rem;font:inherit;font-weight:700;text-decoration:none;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
+.more:hover{opacity:.85}
+.links .more{margin-top:0;align-self:auto}
+#d-email{width:min(26rem,calc(100% - 2rem))}
+.dlg .addr{font-weight:700;user-select:all;word-break:break-all}
+.card{position:relative}
+.card:hover{border-color:var(--accent)}
+.card a.more{position:relative;z-index:1}
+.open{font:inherit;color:inherit;background:none;border:0;padding:0;text-align:left;cursor:pointer}
+.open:focus-visible{outline:none}
+.open::after{content:"";position:absolute;inset:0;border-radius:.75rem}
+.open:focus-visible::after{outline:3px solid var(--pop);outline-offset:3px}
+dialog{border:1px solid var(--line);border-radius:.75rem;background:var(--surface);color:var(--ink);padding:0;width:min(40rem,calc(100% - 2rem));max-height:calc(100% - 2rem);overflow:auto}
+dialog::backdrop{background:rgba(10,15,30,.6)}
+.dlg{padding:1.5rem}
+.close{float:right;margin:0 0 .5rem .75rem;background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:.3rem .9rem;font:inherit;font-size:.9rem;cursor:pointer}
+.shot{position:relative;aspect-ratio:16/9;border:1px dashed var(--line);border-radius:.5rem;background:var(--bg);display:grid;place-items:center;color:var(--muted);font-size:.95rem;margin:1rem 0}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:.5rem}
+.dlg p{margin:0 0 1.25rem}
+.wip{font-size:.75em;font-weight:400;color:var(--muted)}
+
+/* skills + education */
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(22rem,100%),1fr));gap:2rem}
+.cols h3{font-size:1.1rem;margin-bottom:.75rem}
+.cols ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
+.cols li{background:var(--surface);border:1px solid var(--line);border-radius:.5rem;padding:.3rem .8rem;font-size:.95rem;cursor:default}
+.edu{display:grid;gap:1.25rem;max-width:42rem}
+.edu p{margin:0}
+.edu .school{font-size:.95rem;color:var(--muted);margin:0 0 .5rem}
+.edu ul{margin:0;padding-left:1.25rem}
+
+footer{border-top:1px solid var(--line);padding:2.5rem 0 3rem;color:var(--muted)}
+.links{display:flex;gap:.75rem;flex-wrap:wrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
