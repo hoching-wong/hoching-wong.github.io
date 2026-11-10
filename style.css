@@ -22,11 +22,11 @@ header.top a:hover{color:var(--ink)}
 #theme{background:none;border:1px solid var(--line);color:var(--ink);border-radius:50%;width:2.5rem;height:2.5rem;padding:0;display:grid;place-items:center;cursor:pointer}
 
 /* hero: the one loud thing */
-.hero{padding:4rem 0 5rem}
-.hero h1{font:800 clamp(3.2rem,11vw,8rem)/.92 var(--display);letter-spacing:-.035em;margin:0 0 1rem;font-variation-settings:"opsz" 96}
+.hero{padding:4rem 0 5rem;text-align:center}
+.hero h1{font:800 clamp(2.6rem,8.5vw,6rem)/.92 var(--display);letter-spacing:-.035em;margin:0 0 1rem;font-variation-settings:"opsz" 96}
 .hero .role{font:500 clamp(1.15rem,2.6vw,1.7rem)/1.3 var(--display);color:var(--accent);margin:0}
 
-section{padding:3.5rem 0;border-top:1px solid var(--line)}
+section{padding:2.5rem;margin:0 0 1.5rem;background:var(--surface);border:1px solid var(--line);border-radius:1.25rem}
 h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 1.5rem}
 h3{font:500 1.35rem/1.25 var(--display);margin:0 0 .4rem}
 .about{display:grid;grid-template-columns:1fr;gap:1.5rem;max-width:42rem}
@@ -34,7 +34,7 @@ h3{font:500 1.35rem/1.25 var(--display);margin:0 0 .4rem}
 
 /* projects */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(17rem,1fr));gap:1.25rem}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:.75rem;padding:1.5rem;display:flex;flex-direction:column;gap:.75rem}
 .more{margin-top:auto;align-self:flex-start;display:inline-block;padding:.6rem 1.2rem;border-radius:.5rem;font:inherit;font-weight:700;text-decoration:none;background:var(--ink);color:var(--bg);border:0;cursor:pointer}
 .more:hover{opacity:.85}
 .links .more{margin-top:0;align-self:auto}
@@ -59,13 +59,187 @@ dialog::backdrop{background:rgba(10,15,30,.6)}
 /* skills + education */
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(22rem,100%),1fr));gap:2rem}
 .cols h3{font-size:1.1rem;margin-bottom:.75rem}
-.cols ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
-.cols li{background:var(--surface);border:1px solid var(--line);border-radius:.5rem;padding:.3rem .8rem;font-size:.95rem;cursor:default}
+.cols ul,.edu ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem}
+.cols li,.edu li{background:var(--bg);border:1px solid var(--line);border-radius:.5rem;padding:.3rem .8rem;font-size:.95rem;cursor:default}
 .edu{display:grid;gap:1.25rem;max-width:42rem}
 .edu p{margin:0}
 .edu .school{font-size:.95rem;color:var(--muted);margin:0 0 .5rem}
-.edu ul{margin:0;padding-left:1.25rem}
+.edu h3{font-size:1.1rem;margin-bottom:.75rem}
 
-footer{border-top:1px solid var(--line);padding:2.5rem 0 3rem;color:var(--muted)}
+footer{margin:0 0 3rem;padding:2.5rem;background:var(--surface);border:1px solid var(--line);border-radius:1.25rem;color:var(--muted)}
 .links{display:flex;gap:.75rem;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+}
+/* TOKYO NIGHT (CALM) PREVIEW */
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--bg:#1a1b26;--surface:#1f2335;--ink:#c0caf5;--muted:#8089b3;--line:#2e3350;--accent:#7aa2f7;--pop:#bb9af7;--pop-ink:#1a1b26;--display:"Zen Kaku Gothic New",sans-serif;--body:"Zen Kaku Gothic New","Yu Gothic",sans-serif}
+html{background:#1a1b26}
+body{background:linear-gradient(180deg,#14162b 0,#1a1b26 520px,#1a1b26 100%);position:relative;overflow-x:hidden}
+body::before{content:"";position:absolute;left:0;right:0;top:0;height:600px;pointer-events:none;z-index:0;
+ background:
+  url("assets/scene-night.svg") center bottom/1400px 260px repeat-x,
+  linear-gradient(180deg,transparent calc(100% - 55px),#14162a calc(100% - 55px)),
+  radial-gradient(circle at 78% 28%,#ece8d8 0 24px,rgba(236,232,216,calc(.14 + .16*var(--b))) 25px,rgba(236,232,216,calc(.05 + .06*var(--b))) calc(42px + 14px*var(--b)),transparent 90px),
+  radial-gradient(1.5px 1.5px at 12% 18%,#c0caf5 50%,transparent 51%),radial-gradient(1.5px 1.5px at 30% 9%,#c0caf5 50%,transparent 51%),radial-gradient(1px 1px at 45% 26%,#c0caf5 50%,transparent 51%),radial-gradient(1.5px 1.5px at 61% 12%,#c0caf5 50%,transparent 51%),radial-gradient(1px 1px at 90% 8%,#c0caf5 50%,transparent 51%),radial-gradient(1px 1px at 6% 40%,#c0caf5 50%,transparent 51%),radial-gradient(1px 1px at 52% 44%,#c0caf5 50%,transparent 51%),
+  linear-gradient(180deg,#171a30,#242a4a 70%,#3a3358)}
+body::after{content:"";position:absolute;left:0;right:0;top:580px;height:240px;pointer-events:none;z-index:0;background:linear-gradient(180deg,#16182a,#1a1b26)}
+.wrap{position:relative;z-index:1}
+header.top a{color:#a9b1d6}
+header.top a:hover{color:#fff}
+#theme{border-color:rgba(192,202,245,.35);color:#c0caf5}
+.hero{padding:5.5rem 0 18rem;text-align:left}
+.hero h1{font-weight:900;font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.01em;color:#e6ebff;text-shadow:none}
+.hero .role{color:#bb9af7;font-weight:500;letter-spacing:.04em}
+section,footer{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:2.5rem;margin:0 0 1.5rem;box-shadow:0 8px 24px rgba(8,9,20,.35)}
+section h2,footer h2{display:flex;align-items:center;gap:1rem;font-weight:700;letter-spacing:.01em;font-size:clamp(1.5rem,3.4vw,2rem);color:#c0caf5}
+section h2::after,footer h2::after{font:500 .8rem 'Noto Sans TC','PingFang TC','Microsoft JhengHei',sans-serif;color:#bb9af7;background:rgba(187,154,247,.1);padding:.2rem .7rem;letter-spacing:.2em;border-radius:999px;margin-left:auto}
+#about h2::after{content:"自我介紹"}
+#skills h2::after{content:"技能"}
+#education h2::after{content:"學歷"}
+#projects h2::after{content:"作品"}
+footer h2::after{content:"聯絡"}
+h3{font-family:var(--display);font-weight:700}
+.cols h3,.edu h3{color:#7aa2f7;font-size:1rem}
+.cols li,.edu li{background:#24283b;border:1px solid var(--line);border-radius:.5rem;color:#c0caf5;padding:.3rem .85rem;transition:border-color .15s,background .15s}
+.cols li:hover,.edu li:hover{border-color:#7aa2f7;background:#292e47}
+.card{background:#24283b;border:1px solid var(--line);border-radius:.8rem;transition:transform .15s,border-color .15s}
+.card:hover{border-color:#7aa2f7;transform:translateY(-2px)}
+.more{background:#7aa2f7;color:#1a1b26;border-radius:.5rem}
+.more:hover{background:#bb9af7;opacity:1}
+.wip{color:#e0af68}
+footer h2{color:#c0caf5}
+footer{color:#a9b1d6}
+dialog{background:#1f2335;border:1px solid var(--line);border-radius:1rem;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.shot{background:#1a1b26}
+
+/* breathing stars */
+.wrap::before,.wrap::after{content:"";position:absolute;top:0;left:50%;width:100vw;margin-left:-50vw;height:440px;pointer-events:none;z-index:-1;background-repeat:repeat-x;background-size:520px 440px;-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent);mask-image:linear-gradient(180deg,#000 55%,transparent)}
+.wrap::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27520%27%20height%3D%27440%27%20viewBox%3D%270%200%20520%20440%27%3E%3Ccircle%20cx%3D%2785.8%27%20cy%3D%27275.9%27%20r%3D%273.0%27%20fill%3D%27%23cdb9f5%27%20opacity%3D%27.12%27/%3E%3Ccircle%20cx%3D%2785.8%27%20cy%3D%27275.9%27%20r%3D%271.2%27%20fill%3D%27%23cdb9f5%27/%3E%3Ccircle%20cx%3D%27249.1%27%20cy%3D%2786.4%27%20r%3D%270.8%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%27262.6%27%20cy%3D%2794.4%27%20r%3D%270.5%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27192.9%27%20cy%3D%27234.1%27%20r%3D%270.5%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%27412.8%27%20cy%3D%2792.9%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27227.2%27%20cy%3D%27398.1%27%20r%3D%270.8%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%2717.7%27%20cy%3D%27131.6%27%20r%3D%270.8%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27337.4%27%20cy%3D%27375.2%27%20r%3D%270.5%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%27385.3%27%20cy%3D%2735.4%27%20r%3D%270.5%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%2783.8%27%20cy%3D%27291.4%27%20r%3D%270.8%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%2778.6%27%20cy%3D%27266.0%27%20r%3D%270.8%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%2738.8%27%20cy%3D%2779.0%27%20r%3D%273.0%27%20fill%3D%27%23ffffff%27%20opacity%3D%27.12%27/%3E%3Ccircle%20cx%3D%2738.8%27%20cy%3D%2779.0%27%20r%3D%271.2%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%2763.7%27%20cy%3D%27190.5%27%20r%3D%270.8%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%27177.4%27%20cy%3D%2758.5%27%20r%3D%271.0%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%27151.8%27%20cy%3D%27381.8%27%20r%3D%271.0%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%27165.3%27%20cy%3D%27193.8%27%20r%3D%270.8%27%20fill%3D%27%23ffffff%27/%3E%3C/svg%3E");animation:breathe 5.5s ease-in-out infinite alternate}
+.wrap::after{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27520%27%20height%3D%27440%27%20viewBox%3D%270%200%20520%20440%27%3E%3Ccircle%20cx%3D%27206.7%27%20cy%3D%2775.8%27%20r%3D%270.6%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27273.9%27%20cy%3D%27278.7%27%20r%3D%270.8%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%2770.5%27%20cy%3D%27396.7%27%20r%3D%270.5%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%27312.9%27%20cy%3D%27176.7%27%20r%3D%270.8%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%2772.5%27%20cy%3D%2765.5%27%20r%3D%270.8%27%20fill%3D%27%23cdb9f5%27/%3E%3Ccircle%20cx%3D%2731.4%27%20cy%3D%27361.0%27%20r%3D%270.6%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%27457.1%27%20cy%3D%2787.7%27%20r%3D%270.5%27%20fill%3D%27%23dfe6ff%27/%3E%3Ccircle%20cx%3D%27507.5%27%20cy%3D%27259.1%27%20r%3D%270.8%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27424.0%27%20cy%3D%27282.1%27%20r%3D%271.0%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%27245.4%27%20cy%3D%2727.1%27%20r%3D%270.6%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%277.1%27%20cy%3D%2750.5%27%20r%3D%270.8%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27460.3%27%20cy%3D%2741.6%27%20r%3D%271.0%27%20fill%3D%27%23ffffff%27/%3E%3Ccircle%20cx%3D%27200.3%27%20cy%3D%27135.0%27%20r%3D%270.6%27%20fill%3D%27%23fbe9c8%27/%3E%3Ccircle%20cx%3D%27190.0%27%20cy%3D%279.9%27%20r%3D%270.8%27%20fill%3D%27%23cdb9f5%27/%3E%3C/svg%3E");background-position:260px 0;animation:breathe 3.8s ease-in-out -1.6s infinite alternate}
+@keyframes breathe{0%{opacity:.15}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){.wrap::before,.wrap::after{animation:none;opacity:.7}}
+
+/* nav links as pill buttons, matching the heading tags */
+header.top nav{gap:.55rem}
+header.top a{color:#bb9af7;background:rgba(187,154,247,.1);padding:.4rem 1rem;border-radius:999px;font-size:.85rem;font-weight:500;letter-spacing:.1em;line-height:1.3;transition:background .15s,color .15s}
+header.top a:hover{background:rgba(187,154,247,.24);color:#efe6ff}
+
+/* text brightness: halfway between the original and the brighter version (text only; sky and scene untouched) */
+:root,:root:not([data-theme="light"]),:root[data-theme="dark"]{--ink:#cad2f8;--muted:#97a0c8}
+.edu .school{color:var(--ink)}
+section h2,footer h2,footer h2{color:#cad2f8}
+.cols li,.edu li,#theme{color:#cad2f8}
+.hero h1{color:#ebefff}
+.hero .role,header.top a,section h2::after,footer h2::after{color:#c2a3f8}
+.cols h3,.edu h3{color:#84aaf8}
+.more{background:#8e9ff7}
+.wip{color:#e7b872}
+footer{color:#b7bfe2}
+
+/* moon / sun glow breathes */
+@property --b{syntax:"<number>";inherits:false;initial-value:.5}
+@keyframes sky-breathe{from{--b:0}to{--b:1}}
+body::before{animation:sky-breathe 6.5s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}}
+
+/* night: Contact buttons use the Chinese labels' purple, solid fill + soft lilac text (same design as day) */
+.more{background:#5f3cab;color:#e6dcff}
+.more:hover{background:#6a45b8;color:#f0e8ff;opacity:1}
+
+/* theme toggle: never let the nav squeeze it into an oval on narrow screens */
+header.top #theme{flex:0 0 2.5rem;width:2.5rem;min-width:2.5rem;height:2.5rem;aspect-ratio:1/1}
+
+/* project cards may shrink below 17rem on narrow phones instead of overflowing the panel */
+.grid{grid-template-columns:repeat(auto-fill,minmax(min(17rem,100%),1fr))}
+
+/* degree title is the headline of the Education panel; 'Relevant coursework' stays a small subheading */
+.edu > div:first-child h3{font-size:1.5rem;line-height:1.2;margin-bottom:.35rem}
+.cols h3,.edu h3{color:#6a90f0}
+.edu .school{font-size:1.125rem}
+
+/* smooth night <-> day: cross-fade the whole page (browsers with view transitions) */
+::view-transition-old(root),::view-transition-new(root){animation-duration:.3s;animation-timing-function:cubic-bezier(.4,0,.2,1)}
+/* fallback for browsers without view transitions: fade colours instead of snapping */
+.theme-fade,.theme-fade *,.theme-fade *::before,.theme-fade *::after{transition:background-color .3s ease,color .3s ease,border-color .3s ease,box-shadow .3s ease,fill .3s ease !important}
+@media (prefers-reduced-motion:reduce){::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none !important}}
+
+/* ---- hover: whole section panels enlarge; clickable things enlarge, stay shaded and lift with a soft shadow ---- */
+section,footer{transition:transform .25s ease,box-shadow .25s ease}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){
+  section:hover,footer:hover{transform:scale(1.02);z-index:2}
+  header.top a,.more,#theme,.close,.card{transition-property:background-color,color,border-color,box-shadow,transform;transition-duration:.18s;transition-timing-function:ease}
+  header.top a:hover{transform:scale(1.08)}
+  .more:hover{transform:scale(1.06)}
+  #theme:hover{transform:scale(1.12)}
+  .close:hover{transform:scale(1.06)}
+  .card:hover{transform:translateY(-2px) scale(1.02)}
+}
+@media (hover:hover){
+  header.top a:hover,.more:hover,.close:hover{box-shadow:0 6px 16px rgba(0,0,0,.38)}
+  #theme:hover{background:rgba(255,255,255,.12);box-shadow:0 6px 16px rgba(0,0,0,.38)}
+  .card:hover{box-shadow:0 10px 24px rgba(0,0,0,.38)}
+  section:hover,footer:hover{box-shadow:0 14px 34px rgba(0,0,0,.42)}
+}
+
+/* ===== LIGHT (daytime) THEME ===== */
+@keyframes cloud1{to{background-position-x:1800px}}
+:root[data-theme="light"]{--bg:#f3efe6;--surface:#fffdf8;--ink:#2b3150;--muted:#5d6584;--line:#ddd6c6;--accent:#3f62b8;--pop:#3f62b8;--pop-ink:#ffffff;background:#f3efe6}
+:root[data-theme="light"] body{background:linear-gradient(180deg,#9fcdf0 0,#f3efe6 640px,#f3efe6 100%)}
+:root[data-theme="light"] body::before{background:url("assets/scene-day.svg") center bottom/1400px 260px repeat-x,linear-gradient(180deg,transparent calc(100% - 55px),#c9c3b3 calc(100% - 55px)),radial-gradient(circle at 78% 28%,#fffbe6 0 22px,rgba(255,238,176,calc(.55 + .25*var(--b))) 23px,rgba(255,236,170,calc(.22 + .14*var(--b))) calc(48px + 14px*var(--b)),transparent 120px),radial-gradient(ellipse 80% 40% at 50% 88%,rgba(255,226,170,.4),transparent 70%),linear-gradient(180deg,#6fb0e6 0,#9fcdf0 45%,#cfe6f4 78%,#f1e9d6 100%)}
+:root[data-theme="light"] body::after{background:linear-gradient(180deg,#c9c3b3,#f3efe6)}
+:root[data-theme="light"] header.top a{color:#2b3a67;background:rgba(255,255,255,.6)}
+:root[data-theme="light"] header.top a:hover{background:rgba(255,255,255,.92);color:#1b2650}
+:root[data-theme="light"] #theme{color:#1f2a52;border-color:rgba(31,42,82,.4)}
+:root[data-theme="light"] .hero h1{color:#1b2650}
+:root[data-theme="light"] .hero .role{color:#1f3c78}
+:root[data-theme="light"] section,:root[data-theme="light"] footer{box-shadow:0 8px 24px rgba(70,60,35,.14)}
+:root[data-theme="light"] section h2,:root[data-theme="light"] footer h2{color:#13151f}
+:root[data-theme="light"] section h2::after,:root[data-theme="light"] footer h2::after{color:#fff6e8;background:#c9432f;border-radius:999px;padding:.2rem .75rem;box-shadow:inset 0 0 0 1.5px rgba(255,246,232,.55),0 1px 2px rgba(120,40,20,.25);transform:rotate(-1.5deg)}
+:root[data-theme="light"] .cols h3,:root[data-theme="light"] .edu h3{color:#1d3a85}
+:root[data-theme="light"] .cols li,:root[data-theme="light"] .edu li{background:#f6f1e5;border-color:#ddd6c6;color:#2b3150}
+:root[data-theme="light"] .cols li:hover,:root[data-theme="light"] .edu li:hover{border-color:#3f62b8;background:#eef3ff}
+:root[data-theme="light"] .card{background:#f8f3e8;border-color:#ddd6c6}
+:root[data-theme="light"] .card:hover{border-color:#3f62b8}
+:root[data-theme="light"] .more{background:#3a4668;color:#fbf5e6}
+:root[data-theme="light"] .more:hover{background:#c9432f;color:#fff6e8}
+:root[data-theme="light"] .wip{color:#b5700f}
+:root[data-theme="light"] footer{color:#4d5575}
+:root[data-theme="light"] header.top a:hover,:root[data-theme="light"] .more:hover,:root[data-theme="light"] .close:hover{box-shadow:0 6px 16px rgba(30,45,90,.28)}
+:root[data-theme="light"] #theme:hover{background:rgba(31,42,82,.09);box-shadow:0 6px 16px rgba(30,45,90,.28)}
+:root[data-theme="light"] .card:hover{box-shadow:0 10px 24px rgba(30,45,90,.22)}
+:root[data-theme="light"] section:hover,:root[data-theme="light"] footer:hover{box-shadow:0 14px 34px rgba(70,60,35,.26)}
+:root[data-theme="light"] dialog{background:#fffdf8;border-color:#ddd6c6;box-shadow:0 20px 50px rgba(70,60,35,.3)}
+:root[data-theme="light"] .shot{background:#f3efe6}
+:root[data-theme="light"] .wrap::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271800%27%20height%3D%27440%27%20viewBox%3D%270%200%201800%20440%27%3E%3Cdefs%3E%3Cfilter%20id%3D%27b%27%20x%3D%27-20%25%27%20y%3D%27-40%25%27%20width%3D%27140%25%27%20height%3D%27180%25%27%3E%3CfeGaussianBlur%20stdDeviation%3D%272.2%27/%3E%3C/filter%3E%3C/defs%3E%3Cg%20filter%3D%27url%28%23b%29%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.92%27%3E%3Cellipse%20cx%3D%27330.0%27%20cy%3D%27100.0%27%20rx%3D%2771.3%27%20ry%3D%2719.5%27/%3E%3Cellipse%20cx%3D%27290.9%27%20cy%3D%27106.9%27%20rx%3D%2743.7%27%20ry%3D%2714.9%27/%3E%3Cellipse%20cx%3D%27371.4%27%20cy%3D%27108.0%27%20rx%3D%2748.3%27%20ry%3D%2714.9%27/%3E%3Cellipse%20cx%3D%27336.9%27%20cy%3D%2787.3%27%20rx%3D%2739.1%27%20ry%3D%2717.2%27/%3E%3Cellipse%20cx%3D%27316.2%27%20cy%3D%2793.1%27%20rx%3D%2729.9%27%20ry%3D%2713.8%27/%3E%3Cellipse%20cx%3D%271230.0%27%20cy%3D%27168.0%27%20rx%3D%2755.8%27%20ry%3D%2715.3%27/%3E%3Cellipse%20cx%3D%271199.4%27%20cy%3D%27173.4%27%20rx%3D%2734.2%27%20ry%3D%2711.7%27/%3E%3Cellipse%20cx%3D%271262.4%27%20cy%3D%27174.3%27%20rx%3D%2737.8%27%20ry%3D%2711.7%27/%3E%3Cellipse%20cx%3D%271235.4%27%20cy%3D%27158.1%27%20rx%3D%2730.6%27%20ry%3D%2713.5%27/%3E%3Cellipse%20cx%3D%271219.2%27%20cy%3D%27162.6%27%20rx%3D%2723.4%27%20ry%3D%2710.8%27/%3E%3C/g%3E%3C/svg%3E");background-size:1800px 440px;background-position:0 0;animation:cloud1 400s linear infinite;opacity:1}
+:root[data-theme="light"] .wrap::after{background-image:none;animation:none;opacity:0}
+@media (prefers-color-scheme:light){
+:root:not([data-theme="dark"]){--bg:#f3efe6;--surface:#fffdf8;--ink:#2b3150;--muted:#5d6584;--line:#ddd6c6;--accent:#3f62b8;--pop:#3f62b8;--pop-ink:#ffffff;background:#f3efe6}
+:root:not([data-theme="dark"]) body{background:linear-gradient(180deg,#9fcdf0 0,#f3efe6 640px,#f3efe6 100%)}
+:root:not([data-theme="dark"]) body::before{background:url("assets/scene-day.svg") center bottom/1400px 260px repeat-x,linear-gradient(180deg,transparent calc(100% - 55px),#c9c3b3 calc(100% - 55px)),radial-gradient(circle at 78% 28%,#fffbe6 0 22px,rgba(255,238,176,calc(.55 + .25*var(--b))) 23px,rgba(255,236,170,calc(.22 + .14*var(--b))) calc(48px + 14px*var(--b)),transparent 120px),radial-gradient(ellipse 80% 40% at 50% 88%,rgba(255,226,170,.4),transparent 70%),linear-gradient(180deg,#6fb0e6 0,#9fcdf0 45%,#cfe6f4 78%,#f1e9d6 100%)}
+:root:not([data-theme="dark"]) body::after{background:linear-gradient(180deg,#c9c3b3,#f3efe6)}
+:root:not([data-theme="dark"]) header.top a{color:#2b3a67;background:rgba(255,255,255,.6)}
+:root:not([data-theme="dark"]) header.top a:hover{background:rgba(255,255,255,.92);color:#1b2650}
+:root:not([data-theme="dark"]) #theme{color:#1f2a52;border-color:rgba(31,42,82,.4)}
+:root:not([data-theme="dark"]) .hero h1{color:#1b2650}
+:root:not([data-theme="dark"]) .hero .role{color:#1f3c78}
+:root:not([data-theme="dark"]) section,:root:not([data-theme="dark"]) footer{box-shadow:0 8px 24px rgba(70,60,35,.14)}
+:root:not([data-theme="dark"]) section h2,:root:not([data-theme="dark"]) footer h2{color:#13151f}
+:root:not([data-theme="dark"]) section h2::after,:root:not([data-theme="dark"]) footer h2::after{color:#fff6e8;background:#c9432f;border-radius:999px;padding:.2rem .75rem;box-shadow:inset 0 0 0 1.5px rgba(255,246,232,.55),0 1px 2px rgba(120,40,20,.25);transform:rotate(-1.5deg)}
+:root:not([data-theme="dark"]) .cols h3,:root:not([data-theme="dark"]) .edu h3{color:#1d3a85}
+:root:not([data-theme="dark"]) .cols li,:root:not([data-theme="dark"]) .edu li{background:#f6f1e5;border-color:#ddd6c6;color:#2b3150}
+:root:not([data-theme="dark"]) .cols li:hover,:root:not([data-theme="dark"]) .edu li:hover{border-color:#3f62b8;background:#eef3ff}
+:root:not([data-theme="dark"]) .card{background:#f8f3e8;border-color:#ddd6c6}
+:root:not([data-theme="dark"]) .card:hover{border-color:#3f62b8}
+:root:not([data-theme="dark"]) .more{background:#3a4668;color:#fbf5e6}
+:root:not([data-theme="dark"]) .more:hover{background:#c9432f;color:#fff6e8}
+:root:not([data-theme="dark"]) .wip{color:#b5700f}
+:root:not([data-theme="dark"]) footer{color:#4d5575}
+:root:not([data-theme="dark"]) header.top a:hover,:root:not([data-theme="dark"]) .more:hover,:root:not([data-theme="dark"]) .close:hover{box-shadow:0 6px 16px rgba(30,45,90,.28)}
+:root:not([data-theme="dark"]) #theme:hover{background:rgba(31,42,82,.09);box-shadow:0 6px 16px rgba(30,45,90,.28)}
+:root:not([data-theme="dark"]) .card:hover{box-shadow:0 10px 24px rgba(30,45,90,.22)}
+:root:not([data-theme="dark"]) section:hover,:root:not([data-theme="dark"]) footer:hover{box-shadow:0 14px 34px rgba(70,60,35,.26)}
+:root:not([data-theme="dark"]) dialog{background:#fffdf8;border-color:#ddd6c6;box-shadow:0 20px 50px rgba(70,60,35,.3)}
+:root:not([data-theme="dark"]) .shot{background:#f3efe6}
+:root:not([data-theme="dark"]) .wrap::before{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%271800%27%20height%3D%27440%27%20viewBox%3D%270%200%201800%20440%27%3E%3Cdefs%3E%3Cfilter%20id%3D%27b%27%20x%3D%27-20%25%27%20y%3D%27-40%25%27%20width%3D%27140%25%27%20height%3D%27180%25%27%3E%3CfeGaussianBlur%20stdDeviation%3D%272.2%27/%3E%3C/filter%3E%3C/defs%3E%3Cg%20filter%3D%27url%28%23b%29%27%20fill%3D%27%23ffffff%27%20opacity%3D%270.92%27%3E%3Cellipse%20cx%3D%27330.0%27%20cy%3D%27100.0%27%20rx%3D%2771.3%27%20ry%3D%2719.5%27/%3E%3Cellipse%20cx%3D%27290.9%27%20cy%3D%27106.9%27%20rx%3D%2743.7%27%20ry%3D%2714.9%27/%3E%3Cellipse%20cx%3D%27371.4%27%20cy%3D%27108.0%27%20rx%3D%2748.3%27%20ry%3D%2714.9%27/%3E%3Cellipse%20cx%3D%27336.9%27%20cy%3D%2787.3%27%20rx%3D%2739.1%27%20ry%3D%2717.2%27/%3E%3Cellipse%20cx%3D%27316.2%27%20cy%3D%2793.1%27%20rx%3D%2729.9%27%20ry%3D%2713.8%27/%3E%3Cellipse%20cx%3D%271230.0%27%20cy%3D%27168.0%27%20rx%3D%2755.8%27%20ry%3D%2715.3%27/%3E%3Cellipse%20cx%3D%271199.4%27%20cy%3D%27173.4%27%20rx%3D%2734.2%27%20ry%3D%2711.7%27/%3E%3Cellipse%20cx%3D%271262.4%27%20cy%3D%27174.3%27%20rx%3D%2737.8%27%20ry%3D%2711.7%27/%3E%3Cellipse%20cx%3D%271235.4%27%20cy%3D%27158.1%27%20rx%3D%2730.6%27%20ry%3D%2713.5%27/%3E%3Cellipse%20cx%3D%271219.2%27%20cy%3D%27162.6%27%20rx%3D%2723.4%27%20ry%3D%2710.8%27/%3E%3C/g%3E%3C/svg%3E");background-size:1800px 440px;background-position:0 0;animation:cloud1 400s linear infinite;opacity:1}
+:root:not([data-theme="dark"]) .wrap::after{background-image:none;animation:none;opacity:0}
+}
+@media (prefers-reduced-motion:reduce){:root[data-theme="light"] .wrap::before,:root[data-theme="light"] .wrap::after{animation:none}}
