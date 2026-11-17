@@ -21,6 +21,21 @@
     d.addEventListener('click',function(e){if(e.target===d)d.close()});
     d.querySelectorAll('[data-close]').forEach(function(c){c.addEventListener('click',function(){d.close()})});
   });
+  /* screenshot gallery: one image at a time, Prev/Next buttons (they wrap around) and left/right arrow keys */
+  document.querySelectorAll('[data-gallery]').forEach(function(g){
+    var slides=g.querySelectorAll('.shot'),count=g.querySelector('.gcount'),n=0;
+    function show(k){
+      n=(k+slides.length)%slides.length;
+      slides.forEach(function(s,j){s.hidden=j!==n});
+      count.textContent=(n+1)+' / '+slides.length;
+    }
+    g.querySelector('[data-prev]').addEventListener('click',function(){show(n-1)});
+    g.querySelector('[data-next]').addEventListener('click',function(){show(n+1)});
+    var d=g.closest('dialog');
+    if(d)d.addEventListener('keydown',function(e){
+      if(e.key==='ArrowLeft')show(n-1);else if(e.key==='ArrowRight')show(n+1);
+    });
+  });
   document.querySelectorAll('.shot img').forEach(function(i){
     function gone(){i.remove()}
     i.addEventListener('error',gone);

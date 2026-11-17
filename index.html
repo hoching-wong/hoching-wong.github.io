@@ -59,6 +59,10 @@
       <h2>Projects</h2>
       <div class="grid">
         <article class="card">
+          <h3><button class="open" type="button" data-open="d-syllabus">Syllabus Planner</button></h3>
+          <p>A Python web app that reads course syllabus PDFs and combines their deadlines, exams and grade weights into one timeline, flagging crunch weeks and exporting to a calendar file. Built with Streamlit and the Gemini API.</p>
+        </article>
+        <article class="card">
           <h3><button class="open" type="button" data-open="d-planner">UofT CS Course Planner</button></h3>
           <p>A full-stack web application that maps course prerequisite relationships from a UofT courses database and recommends courses based on RateMyProf ratings collected with a web scraper. Created as part of UofT CSC111 Team Project.</p>
         </article>
@@ -72,7 +76,7 @@
       <div class="dlg">
         <button class="close" type="button" data-close>Close</button>
         <h3 id="t-planner">UofT CS Course Planner</h3>
-        <div class="shot"><span>Screenshot coming soon</span><img src="assets/course-planner.png" alt="Screenshot of the UofT CS Course Planner"></div>
+        <div class="shot fit"><span>Screenshot coming soon</span><img src="assets/course-planner.png" alt="Screenshot of the UofT CS Course Planner"></div>
         <p>A full-stack web application that maps course prerequisite relationships from a UofT courses database and recommends courses based on RateMyProf ratings collected with a web scraper. Created as part of UofT CSC111 Team Project.</p>
         <a class="more" href="https://github.com/at-least-try/CSC111-Major-Project">View on GitHub</a>
       </div>
@@ -84,6 +88,22 @@
         <div class="shot"><span>Screenshot coming soon</span><img src="assets/catan.png" alt="Screenshot of Settlers Of Catan Remix"></div>
         <p>Settlers Of Catan implemented in Java with Swing, created as part of UofT CSC207 Team Project.</p>
         <a class="more" href="https://github.com/hoching-wong/Settlers-Of-Catan-Remix">View on GitHub</a>
+      </div>
+    </dialog>
+    <dialog id="d-syllabus" aria-labelledby="t-syllabus">
+      <div class="dlg">
+        <button class="close" type="button" data-close>Close</button>
+        <h3 id="t-syllabus">Syllabus Planner</h3>
+        <div class="gallery" data-gallery>
+          <div class="shot fit"><img src="assets/syllabus-planner-1.png" alt="Syllabus Planner upload page with two syllabus PDFs and the extraction results"></div>
+          <div class="shot fit" hidden><img src="assets/syllabus-planner-2.png" alt="Syllabus Planner editable timeline table with items to check before exporting"></div>
+          <div class="shot fit" hidden><img src="assets/syllabus-planner-3.png" alt="Syllabus Planner workload by week chart with crunch weeks highlighted"></div>
+          <button class="garrow gprev" type="button" data-prev aria-label="Previous screenshot">&#8249;</button>
+          <button class="garrow gnext" type="button" data-next aria-label="Next screenshot">&#8250;</button>
+          <span class="gcount" aria-live="polite">1 / 3</span>
+        </div>
+        <p>A Python web app where users upload their course syllabus PDFs and get one combined timeline of deadlines and grade weights, which can be exported as a calendar (.ics) file. It also warns about crunch weeks, when too much of your grade is due at once.<br>Built with the Gemini API and Streamlit.</p>
+        <a class="more" href="https://github.com/hoching-wong/syllabus-planner">View on GitHub</a>
       </div>
     </dialog>
     <dialog id="d-email" aria-labelledby="t-email">

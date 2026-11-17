@@ -54,6 +54,24 @@ dialog::backdrop{background:rgba(10,15,30,.6)}
 .shot{position:relative;aspect-ratio:16/9;border:1px dashed var(--line);border-radius:.5rem;background:var(--bg);display:grid;place-items:center;color:var(--muted);font-size:.95rem;margin:1rem 0}
 .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border-radius:.5rem}
 .dlg p{margin:0 0 1.25rem}
+.gallery .shot[hidden]{display:none}
+.gallery{position:relative;margin:1rem 0}
+.gallery .shot{margin:0;width:100%;box-sizing:border-box}
+/* .fit: the frame takes the screenshot's own proportions (no empty bars); with no image it falls back to the 16:9 placeholder */
+.shot.fit{display:block;width:100%;box-sizing:border-box;aspect-ratio:auto;overflow:hidden;border-style:solid}
+.shot.fit img{position:static;display:block;width:100%;height:auto;border-radius:0}
+.shot.fit:not(:has(img)){display:grid;aspect-ratio:16/9;border-style:dashed}
+.shot.fit:has(img)>span{display:none}
+@media (hover:hover){
+  .garrow,.gcount{opacity:0;transition:opacity .18s ease}
+  .gallery:hover .garrow,.gallery:hover .gcount,.gallery:focus-within .garrow,.gallery:focus-within .gcount{opacity:.9}
+  .gallery:hover .garrow:hover{opacity:1}
+}
+.garrow{position:absolute;top:50%;transform:translateY(-50%);z-index:1;width:2.2rem;height:2.2rem;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:1.5rem;line-height:1;padding:0 0 .15rem;display:grid;place-items:center;cursor:pointer}
+.garrow:hover{border-color:var(--ink)}
+.gprev{left:.5rem}
+.gnext{right:.5rem}
+.gcount{position:absolute;bottom:.5rem;left:50%;transform:translateX(-50%);z-index:1;padding:.1rem .6rem;border-radius:999px;background:var(--surface);color:var(--muted);font-size:.8rem}
 .wip{font-size:.75em;font-weight:400;color:var(--muted)}
 
 /* skills + education */
